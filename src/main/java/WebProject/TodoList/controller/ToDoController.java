@@ -14,9 +14,7 @@ import java.util.List;
 public class ToDoController {
 
     public static List<ListComp> comps = new ArrayList<>();
-
-    @ResponseBody
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/")
     public String home(Model model){
         comps.add(new ListComp("Make To-Do List"));
         comps.add(new ListComp("Study English"));
