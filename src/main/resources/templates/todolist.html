@@ -93,6 +93,23 @@
     }
   </style>
   <script>
+    import mysql from 'mysql';
+
+    var connection = mysql.createConnection({
+      host: '127.0.0.1',
+      port: '3306',
+      user: 'root',
+      password: 'test1234',
+      database: 'Todo_db'
+    })
+
+    let connection = mysql.createConnection(conn);
+    connection.connect(function(err) {
+      if(err) console.error('mysql connection error : ' + err);
+      else console.log('mysql connect success!');
+    });
+    
+
     $(document).ready(function(){
       listing();
     });
