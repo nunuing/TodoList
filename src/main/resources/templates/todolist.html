@@ -25,7 +25,7 @@
 
     .ListRect {
       width: 1065px;
-      height: 100%;
+      height: 100vw;
       margin: 5% auto 0 auto;
       border-radius: 28px 28px 0px 0px;
       background-color: rgba(217, 217, 217, 0.5);
@@ -121,9 +121,9 @@
       </div>
       <div class="lists" th:each="comp : ${comps}">
         <span class="checkbox"></span>
-        <img class="check" src="images/check-symbol.png" alt="check">
+        <img class="check" src="images/check-symbol.png" alt="check" style="visibility:hidden">
         <div class="content" th:text="${comp.content}"></div>
-        <img class="edit" src="images/pencil.png" alt="edit button">
+        <img class="edit" src="images/pencil.png" alt="edit button" style="visibility:hidden">
       </div>
     </div>
   </div>
