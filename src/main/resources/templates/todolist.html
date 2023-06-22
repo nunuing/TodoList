@@ -93,7 +93,7 @@
     }
   </style>
   <script>
-    import mysql from 'mysql';
+    var mysql = require('mysql2');      //mysql 모듈을 사용
 
     var connection = mysql.createConnection({
       host: '127.0.0.1',
@@ -103,13 +103,16 @@
       database: 'Todo_db'
     })
 
-    let connection = mysql.createConnection(conn);
-    connection.connect(function(err) {
-      if(err) console.error('mysql connection error : ' + err);
-      else console.log('mysql connect success!');
-    });
-    
+    connection.connect();
 
+    connection.query('SELECT * FROM LIST', function(error, results, fields) {
+    if (error) {
+          console.log(error);
+    }
+    console.log(results);
+    });
+
+    connection.end();
     $(document).ready(function(){
       listing();
     });
